@@ -1,0 +1,77 @@
+                                                                                                                    
+@media screen {
+  :root {
+    --app-ink:#172b45; --app-muted:#74849a; --app-line:#dfe7f0;
+    --app-surface:#fff; --app-canvas:#f3f6fa; --app-blue:#245b91;
+    --app-blue-soft:#eaf2fa; --app-gold:#c9a65a;
+    --app-radius:16px; --app-shadow:0 10px 28px rgba(20,39,62,.055);
+  }
+  body { background:linear-gradient(135deg,#f5f7fb 0%,#eef3f8 100%); color:var(--app-ink); }
+  .main,.main-content,.content { min-width:0; }
+  .topbar { min-height:76px; }
+  .topbar .title { letter-spacing:-.035em; }
+  .content { padding-bottom:38px; }
+                                                    
+  .section,.page-title,h1,h2,h3 { text-wrap:balance; }
+  .section { font-weight:800; }
+  .records-shell,.detail-shell,.edit-shell,.enroll-shell,.print-shell,.logs-shell,.settings-shell,
+  #recordsListView,#individualRecordView,#editRecordView,#trash,#logs,#settings,#census,#reports,#learnerid,#enrollment {
+    border-radius:18px;
+  }
+  .records-shell,.detail-shell,.edit-shell,.enroll-shell,.logs-shell,.settings-shell,
+  #recordsListView .panel,#trash .panel,#logs .panel,#settings .panel,#census .panel,#reports .panel {
+    border-color:var(--app-line); box-shadow:var(--app-shadow);
+  }
+                                                              
+  .toolbar,.table-toolbar,.filter-bar,.records-toolbar,.action-toolbar {
+    gap:10px; align-items:center;
+  }
+  .toolbar input,.toolbar select,.table-toolbar input,.table-toolbar select,
+  .filter-bar input,.filter-bar select { background:#f8fafd; }
+  input,select,textarea { color:#243b56; }
+  input::placeholder,textarea::placeholder { color:#9aa7b7; }
+                                                                                   
+  button,.btn { border-radius:10px; font-weight:650; }
+  button:not(:disabled):active,.btn:not(:disabled):active { transform:translateY(1px); }
+  button:disabled,.btn:disabled { cursor:not-allowed; opacity:.58; }
+                                       
+  .table-wrap,.table-container,.records-table-wrap { overflow:auto; border:1px solid var(--app-line); border-radius:13px; background:#fff; }
+  .table { border-spacing:0; }
+  .table thead th { position:sticky; top:0; z-index:1; background:#f4f7fb; color:#657991; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.075em; border-bottom:1px solid #e2e9f1; }
+  .table tbody td { border-bottom:1px solid #edf1f6; }
+  .table tbody tr:last-child td { border-bottom:0; }
+  .table tbody tr:hover { background:#f5f8fc; }
+  .table td,.table th { vertical-align:middle; }
+                                     
+  .tabs,.tab-list,[role="tablist"] { gap:6px; }
+  .tabs button,.tab-list button,[role="tab"] { border-radius:10px; }
+  [role="tab"][aria-selected="true"],.tab.active,.tabs button.active {
+    background:#eaf2fa; color:#1e5689; box-shadow:inset 0 0 0 1px #d7e5f3;
+  }
+                                          
+  #reports .card,#census .card,#reports .panel,#census .panel { border:1px solid var(--app-line); border-radius:15px; background:linear-gradient(145deg,#fff,#fbfcfe); box-shadow:0 7px 20px rgba(20,39,62,.045); }
+  #reports canvas,#census canvas { max-width:100%; }
+  #reports .section,#census .section { color:#1d3857; }
+                                                    
+  #enrollment .form-section,#enrollment fieldset,.enroll-shell fieldset { border:1px solid var(--app-line); border-radius:14px; background:#fff; }
+  #enrollment legend,.enroll-shell legend { color:#294967; font-weight:800; padding:0 8px; }
+  #enrollment label,.enroll-shell label { color:#566b82; font-weight:650; }
+                                        
+  .empty-state,.empty,.placeholder { border-radius:14px; }
+  .badge,.status-badge,.pill { border-radius:999px; }
+                                                                         
+  .modal,.modal-content,.dialog,.confirmation-dialog { border-radius:18px; border-color:#dfe7f0; box-shadow:0 24px 70px rgba(13,31,52,.22); }
+  .modal-backdrop,.modal-overlay { backdrop-filter:blur(4px); }
+                                    
+  .card,.panel,.records-shell,.logs-shell,.settings-shell { transition:border-color .18s ease,box-shadow .18s ease; }
+  .card:hover,.panel:hover { border-color:#d0ddea; }
+  a { text-underline-offset:3px; }
+  :focus-visible { outline:3px solid rgba(66,111,156,.32); outline-offset:2px; }
+}
+@media screen and (max-width:900px) {
+  .content { padding-left:18px; padding-right:18px; }
+  .table-wrap,.table-container,.records-table-wrap { border-radius:11px; }
+}
+@media screen and (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+}
